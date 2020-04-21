@@ -16,7 +16,7 @@ import android.content.Context
 val nodes : Int = 5
 val squares : Int = 4
 val colors : Array<String> = arrayOf("#2196F3", "#F44336", "#9C27B0", "#FF5722", "#4CAF50")
-val scGap : Float = 0.02f
+val scGap : Float = 0.02f / squares
 val strokeFactor : Float = 90f
 val sizeFactor : Float = 5.6f
 val delay : Long = 20
@@ -35,7 +35,7 @@ fun Canvas.drawCorneredSquareFill(i : Int, w : Float, scale : Float, size : Floa
     rotate(90f * i)
     translate(-w / 2, -w / 2)
     drawRect(RectF(0f, 0f, size * sf1, size), paint)
-    drawLine(size / 2, size / 2, (w - 2 * size) * sf2, size / 2, paint)
+    drawLine(size , size / 2, size + (w - 2 * size) * sf2, size / 2, paint)
     restore()
 }
 
