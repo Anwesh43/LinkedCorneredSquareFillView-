@@ -207,4 +207,13 @@ class CorneredSquareFillView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : CorneredSquareFillView {
+            val view : CorneredSquareFillView = CorneredSquareFillView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
